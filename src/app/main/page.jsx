@@ -1,19 +1,22 @@
 "use client";
 import { Link } from "@chakra-ui/next-js";
 import { Box, Container, Flex, Grid, GridItem, HStack, Heading, Text, VStack } from '@chakra-ui/react'
-import { seminar, seminarList } from "./_data/data";
+import { monthDate, seminar, seminarList } from "./_data/data";
 import Check from '@public/icons/check.svg';
 export default function Page() {
+  const [text, icon] = monthDate();
   return (
     <Container maxW="container.sm" bg={"#4285F4"} h="100%" padding={0} overflow='hidden'>
       <Flex direction='column' padding='54px 34px 54px 34px'>
         <Text color='#E6E6E6' fontSize='18px'>{'Lead'}</Text>
         <Heading color='#ffffff' fontSize='28px'>{'정상현님'} 안녕하세요</Heading>
       </Flex>
-      <Flex flexDir='column' borderRadius='30px 30px 0px 0px' bg='#ffffff' height='100%' >
-        <Flex direction='column' padding='54px 34px 0px 34px' gap={1}>
-          <Heading color='#000000' fontSize='3xl'>{'세미나'}</Heading>
-          <Text color='#A1A1A1' fontSize='12px'>{'세미나와 관련된 기능들입니다.'}</Text>
+      <Flex flexDir='column' borderRadius='30px 30px 0px 0px' bg='#ffffff' height='100%' padding={0}>
+        <Flex direction='column' padding='34px 34px 0px 34px' >
+          <Box>
+            <Heading color='#000000' fontSize='3xl'>{'세미나'}</Heading>
+            <Text color='#A1A1A1' fontSize='12px'>{'세미나와 관련된 기능들입니다.'}</Text>
+          </Box>
           <Grid templateColumns='repeat(4, 1fr)' gap={2} marginTop='15px'>
             {seminar.map((e) => {
               return (
@@ -38,9 +41,11 @@ export default function Page() {
             })}
           </Grid>
         </Flex>
-        <Flex direction='column' padding='54px 34px 0px 34px'>
-          <Heading color='#000000' fontSize='3xl'>{'일정 확인'}</Heading>
-          <Text color='#A1A1A1' fontSize='12px'>{'확인해야할 일정 목록입니다.'}</Text>
+        <Flex direction='column' padding='30px 34px 0px 34px' gap={2}>
+          <Box>
+            <Heading color='#000000' fontSize='3xl'>{'일정 확인'}</Heading>
+            <Text color='#A1A1A1' fontSize='12px'>{'확인해야할 일정 목록입니다.'}</Text>
+          </Box>
           {seminarList.map((e) => {
             return (
               <Flex
@@ -53,11 +58,11 @@ export default function Page() {
                 w='100%'
                 shadow='0px 4px 4px 0px #00000040'
                 cursor='pointer'
-                padding='10px 10px 0px 30px'
+                padding='10px 10px 0px 18px'
                 gap={2}
               >
                 <Flex flexDirection='column' gap={1}>
-                  <Heading fontSize='lg' color='#ffffff'>{e.month}월 세미나</Heading>
+                  <Heading fontSize='lg' color='#ffffff'>{text}월 세미나</Heading>
                   <Flex flexDirection='column' alignItems='flex-start'>
                     <Flex alignItems='center' justifyContent='center'>
                       {e.time_icon}
@@ -75,9 +80,26 @@ export default function Page() {
               </Flex>)
           })}
         </Flex>
-        <Flex direction='column' padding='54px 34px 0px 34px'>
-          <Heading color='#000000' fontSize='3xl'>{'세미나 날짜 투표'}</Heading>
-          <Text color='#A1A1A1' fontSize='12px'>{'다음 세미나 날짜를 투표해주세요.'}</Text>
+        <Flex direction='column' padding='30px 34px 0px 34px' gap={2}>
+          <Box>
+            <Heading color='#000000' fontSize='3xl'>{'세미나 날짜 투표'}</Heading>
+            <Text color='#A1A1A1' fontSize='12px'>{'다음 세미나 날짜를 투표해주세요.'}</Text>
+          </Box>
+          <Flex
+            bg='#FAAB00'
+            borderRadius='10px'
+            h='47px'
+            w='100%'
+            alignItems='center'
+            justifyContent='space-between'
+            padding='0px 20px 0px 20px'
+            shadow='0px 4px 4px 0px #00000040'
+          >
+            <Heading color='#ffffff' fontSize='lg'>{text}월 세미나 투표</Heading>
+            <Box cursor='pointer'>
+              {icon}
+            </Box>
+          </Flex>
         </Flex>
       </Flex>
     </Container>
