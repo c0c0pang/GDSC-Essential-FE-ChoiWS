@@ -35,7 +35,6 @@ export const seminar = [
 
 export const seminarList = [{
     id: 0,
-    month: '2',
     time: '2024-01-01',
     time_icon: <Time />,
     place: '새빛관 203호',
@@ -44,3 +43,10 @@ export const seminarList = [{
     color: '#33A853',
 
 }]
+
+export const monthDate = () => {
+    const now = new Date();
+    const month = now.getMonth() + 1;
+
+    return [month, <Vote />];
+}
