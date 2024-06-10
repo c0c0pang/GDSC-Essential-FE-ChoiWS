@@ -41,12 +41,32 @@ export const seminarList = [{
     place_icon: <Place />,
     icon: <Seminar />,
     color: '#33A853',
-
 }]
+export const seminarInfoList = [{
+    info: {
+        id: 0,
+        title: '세미나 제목1',
+        presenter: '정상현'
+    }
+},
+{
+    info: {
+        id: 1,
+        title: '세미나 제목2',
+        presenter: '정상현'
 
-export const monthDate = () => {
+    }
+}
+]
+
+export const monthDate = (check) => {
     const now = new Date();
     const month = now.getMonth() + 1;
+    if (check === 'month') {
+        return month;
+    }
+    if (check === 'both') {
+        return [month, <Vote />];
+    }
 
-    return [month, <Vote />];
 }
