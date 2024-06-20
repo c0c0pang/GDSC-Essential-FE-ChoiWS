@@ -1,7 +1,12 @@
 "use client";
 
-import { ChakraProvider } from "@chakra-ui/react";
-
+import { ChakraProvider, Container } from "@chakra-ui/react";
 export function Providers({ children }) {
-  return <ChakraProvider>{children}</ChakraProvider>;
+  return (
+    <ChakraProvider>
+      <Container maxW="container.sm" h="100%" padding={0} overflow='hidden'>
+        {children}
+      </Container>
+    </ChakraProvider>
+  )
 }
