@@ -1,19 +1,18 @@
 "use client"
-import { Box, Flex, Heading, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { Box, Collapse, Fade, Flex, Heading, Text, useDisclosure } from '@chakra-ui/react'
+import React from 'react'
 import { monthDate, seminarList } from '../../_data/data'
 import AbsenceModal from '../modal/AbsenceModal';
 
 const Calendar = () => {
     const month = monthDate('month');
-    const [isOpen, setOpen] = useState(false);
+    const { isOpen, onToggle } = useDisclosure()
     return (
-        <React.Fragment>
-            {isOpen ? (<AbsenceModal setOpen={setOpen} month={month} />) : (null)}
+        <Flex flexDirection='column'>
             <Flex direction='column' padding='30px 34px 0px 34px' gap={2}>
                 <Box>
-                    <Heading color='#000000' fontSize='3xl'>{'일정 확인'}</Heading>
-                    <Text color='#A1A1A1' fontSize='12px'>{'확인해야할 일정 목록입니다.'}</Text>
+                    <Heading color='#000000' fontSize='2xl'>{'일정 확인'}</Heading>
+                    <Text color='#A1A1A1' fontSize='10px'>{'확인해야할 일정 목록입니다.'}</Text>
                 </Box>
                 {seminarList.map((e) => {
                     return (
@@ -23,17 +22,17 @@ const Calendar = () => {
                             alignItems='center'
                             justifyContent='space-between'
                             borderRadius={10}
-                            h='10dvh'
+                            h='13lvh'
                             w='100%'
                             shadow='0px 4px 4px 0px #00000040'
                             cursor='pointer'
                             padding='0px 25px 0px 18px'
                             gap={2}
-                            onClick={() => setOpen(true)}
+                            onClick={onToggle}
                         >
                             <Flex flexDirection='column' gap={3}>
                                 <Heading fontSize='lg' color='#ffffff'>{month}월 세미나</Heading>
-                                <Flex flexDirection='column' alignItems='flex-start'>
+                                <Flex flexDirection='column' alignItems='flex-start' gap={1}>
                                     <Flex alignItems='center' justifyContent='center'>
                                         {e.time_icon}
                                         <Text color='#ffffff' fontSize='8px'>{e.time}</Text>
@@ -50,7 +49,10 @@ const Calendar = () => {
                         </Flex>)
                 })}
             </Flex >
-        </React.Fragment>
+            <Collapse in={isOpen} >
+                <AbsenceModal onToggle={onToggle} month={month} />
+            </Collapse>
+        </Flex>
     )
 }
 
