@@ -35,12 +35,38 @@ export const seminar = [
 
 export const seminarList = [{
     id: 0,
-    month: '2',
     time: '2024-01-01',
     time_icon: <Time />,
     place: '새빛관 203호',
     place_icon: <Place />,
     icon: <Seminar />,
     color: '#33A853',
-
 }]
+export const seminarInfoList = [{
+    info: {
+        id: 0,
+        title: '세미나 제목1',
+        presenter: '정상현'
+    }
+},
+{
+    info: {
+        id: 1,
+        title: '세미나 제목2',
+        presenter: '정상현'
+
+    }
+}
+]
+
+export const monthDate = (check) => {
+    const now = new Date();
+    const month = now.getMonth() + 1;
+    if (check === 'month') {
+        return month;
+    }
+    if (check === 'both') {
+        return [month, <Vote />];
+    }
+
+}
