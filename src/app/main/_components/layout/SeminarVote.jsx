@@ -7,13 +7,13 @@ const SeminarVote = () => {
     return (
         <Flex direction='column' padding='30px 34px 0px 34px' gap={2}>
             <Box>
-                <Heading color='#000000' fontSize='3xl'>{'세미나 날짜 투표'}</Heading>
-                <Text color='#A1A1A1' fontSize='12px'>{'다음 세미나 날짜를 투표해주세요.'}</Text>
+                <Heading color='#000000' fontSize='2xl'>{'세미나 날짜 투표'}</Heading>
+                <Text color='#A1A1A1' fontSize='10px'>{'다음 세미나 날짜를 투표해주세요.'}</Text>
             </Box>
             <Flex
                 bg='#FAAB00'
                 borderRadius='10px'
-                h='47px'
+                h='7.5lvh'
                 w='100%'
                 alignItems='center'
                 justifyContent='space-between'
