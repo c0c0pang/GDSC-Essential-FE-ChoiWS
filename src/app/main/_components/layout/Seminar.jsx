@@ -10,10 +10,10 @@ const Seminar = () => {
         <Flex direction="column" padding="34px 34px 0px 34px">
             <Box>
                 <Heading color="#000000" fontSize="2xl">
-                    {'세미나'}
+                    세미나
                 </Heading>
                 <Text color="#A1A1A1" fontSize="10px">
-                    {'세미나와 관련된 기능들입니다.'}
+                    세미나와 관련된 기능들입니다.
                 </Text>
             </Box>
             <Grid templateColumns="repeat(4, 1fr)" gap={2} marginTop="15px">

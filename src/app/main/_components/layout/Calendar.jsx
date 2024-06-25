@@ -2,7 +2,6 @@
 import {
     Box,
     Collapse,
-    Fade,
     Flex,
     Heading,
     Text,
