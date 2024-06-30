@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
-import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
+import { Button, Flex, Heading, Text } from '@chakra-ui/react';
 import Camera from '@public/icons/camera.svg';
 import Link from 'next/link';
+
 const Page = () => {
     return (
         <Flex h="100%" flexDirection="column">

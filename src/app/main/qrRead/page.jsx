@@ -1,7 +1,8 @@
 'use client';
-import { Box, Flex, background } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { QrReader } from 'react-qr-reader';
+
 const Page = () => {
     const [data, setData] = useState('No result');
     return (

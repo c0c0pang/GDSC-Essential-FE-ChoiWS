@@ -5,14 +5,31 @@ import Calendar from './_components/layout/Calendar';
 import SeminarVote from './_components/layout/SeminarVote';
 import UserInfo from './_components/layout/UserInfo';
 import React from 'react';
+
 export default function Page() {
     return (
-        <Box bg={'#4285F4'} h="100%">
+        <Box bg="#4285F4" h="100%">
             <UserInfo />
+
+            <Flex
+                justifyContent="center"
+                bg="white"
+                roundedTopLeft={30}
+                roundedTopRight={30}
+                paddingTop={4}
+                height="5%"
+            >
+                <Box
+                    bg="lightgray"
+                    h="7px"
+                    w="400px"
+                    maxWidth="22%"
+                    borderRadius={30}
+                />
+            </Flex>
             <Flex
                 flexDirection="column"
-                borderRadius={10}
-                bg="#ffffff"
+                bg="white"
                 height="100%"
                 padding={0}
                 gap={3}

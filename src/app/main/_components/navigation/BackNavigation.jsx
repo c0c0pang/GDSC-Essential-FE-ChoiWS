@@ -2,8 +2,9 @@
 
 import React from 'react';
 import BackArrow from '@public/icons/back-arrow.svg';
-import { Box, Button, Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
+
 const BackNavigation = () => {
     const router = useRouter();
     return (

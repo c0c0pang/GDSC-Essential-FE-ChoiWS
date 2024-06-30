@@ -4,14 +4,15 @@ import { monthDate } from '../../_data/data';
 
 const SeminarVote = () => {
     const [month, icon] = monthDate('both');
+
     return (
         <Flex direction="column" padding="30px 34px 0px 34px" gap={2}>
             <Box>
                 <Heading color="#000000" fontSize="2xl">
-                    {'세미나 날짜 투표'}
+                    세미나 날짜 투표
                 </Heading>
                 <Text color="#A1A1A1" fontSize="10px">
-                    {'다음 세미나 날짜를 투표해주세요.'}
+                    다음 세미나 날짜를 투표해주세요.
                 </Text>
             </Box>
             <Flex

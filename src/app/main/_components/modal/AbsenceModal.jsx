@@ -1,12 +1,4 @@
-import {
-    Box,
-    Container,
-    Flex,
-    Grid,
-    Heading,
-    Text,
-    useDisclosure,
-} from '@chakra-ui/react';
+import { Container, Flex, Grid, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 import { seminarInfoList, seminarList } from '../../_data/data';
 
@@ -14,30 +6,30 @@ const AbsenceModal = ({ onToggle, month }) => {
     return (
         <Container
             maxW="container.sm"
-            bg={'#5C5C5C33'}
+            bg="#5C5C5C33"
             h="100%"
-            position={'absolute'}
+            position="absolute"
             padding={0}
             top={0}
         >
             <Container
                 maxW="container.sm"
                 h="100%"
-                position={'absolute'}
+                position="absolute"
                 padding={0}
                 top={0}
                 onClick={onToggle}
-            ></Container>
+            />
             <Flex
                 direction="column"
                 padding="30px 34px 0px 34px"
-                position={'relative'}
+                position="relative"
                 top="33%"
             >
                 <Grid
                     shadow="0px 4px 4px 0px #00000040"
                     borderRadius={10}
-                    bg={'#33A853'}
+                    bg="#33A853"
                     gap={8}
                     padding={6}
                 >
@@ -95,7 +87,7 @@ const AbsenceModal = ({ onToggle, month }) => {
                         );
                     })}
                     <Flex
-                        bg={'#33A853'}
+                        bg="#33A853"
                         alignItems="flex-start"
                         justifyContent="space-between"
                         borderRadius="0px 0px 10px 10px"
